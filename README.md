@@ -5,9 +5,9 @@ Scores explanation claims against the set of answers the data can actually suppo
 An attribution such as SHAP describes a model (T1). It is often read as a claim about how a
 decision would respond to a real intervention (T2) or about what caused an outcome in the
 world (T3). Those readings are warranted only if the causal quantity behind them is
-identified. This repository contains the pilot, the WP1 benchmark on the
+identified. This repository contains the pilot, the main benchmark (WP1, work package 1 of the research proposal) on the
 [Causal Chambers](https://github.com/juangamella/causal-chamber) light tunnel, a test of
-Proposition 2 (identification versus model multiplicity), and an error decomposition for
+Proposition 2 (identification versus model multiplicity: whether models disagree does not tell whether the data can settle a claim), and an error decomposition for
 root-cause claims on [PetShop](https://github.com/amazon-science/petshop-root-cause-analysis).
 
 ## Design
@@ -49,8 +49,7 @@ identified decisions, C1, clean proxy:
 | Integrated gradients, LEWIS-style PN | 0% | at most 6% |
 | Coin flip | 51% | 51% |
 
-The Rashomon ensemble abstains on only 4.7% to 5.6% of ambiguous decisions.
-
+The Rashomon ensemble abstains on only about 4% to 6% of ambiguous decisions (threshold claim, C1; 4.1% with a clean proxy, 6.1% with proxy noise 0.25).
 **Proposition 2** (`results/prop2.csv`). The ambiguous share is 21.4% under C1 and 0% under C3
 at every Rashomon tolerance; Rashomon members disagree on 0%, 1.1%, 8.4% and 56.2% of decisions
 at tolerances 0, 0.01, 0.03 and 0.1 nats, identically under both conditions.
